@@ -1,4 +1,17 @@
+sudo: required
+dist: trusty
 language: cpp
+compiler: g++
+install: export CXX="g++-5"
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-5
+
+before_install: sudo apt-get update -qq
+
 before_script:
     - mkdir build
     - cd build
